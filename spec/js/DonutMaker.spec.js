@@ -35,7 +35,7 @@ describe('FEATURE 2: Be able to purchase the first Auto Clicker with 100 donuts 
         it('should subtract 100 from the donut count as well as add one to the auto click count', () => {
             underTest.donutCount = 100;
             underTest.purchaseAutoClick();
-            underTest.autoClickSubtraction();
+            // underTest.autoClickSubtraction();
             expect(underTest.donutCount).toBe(0)
         });
 
@@ -47,12 +47,15 @@ describe('FEATURE 3 : The cost of each Auto Clicker will go up with each purchas
 
     beforeEach(() => {
         underTest = new DonutMaker;
+        for(let i =0; i<2000; i++){
+            underTest.recordClick();
+        }
     });
     describe('Increase the cost of the second Auto Clicker by an additional ten percent.', () => {
         it('increase the cost from 100 to 110 when autoClicker count is 2', () => {
-            underTest.autoClickCount = 2
+            underTest.autoClickCount = 2            
             underTest.increaseCostOfAutoClicker();
-            expect(underTest.autoClickerCost).toBe(110);
+            expect(underTest.autoClickerCost).toBe(110); 
         });
         it('Increase the cost of every additional Auto Clicker by an additional ten percent for every additional autoClicker.', () => {
             underTest.autoClickCount = 3
@@ -151,10 +154,54 @@ describe('FEATURE 2 : The cost of each Donut Multiplier will go up with each pur
         describe('Increase the cost of every additional Donut Multiplier by an additional ten percent.', () => {
             it('should make the cost of each additional donutMultiplierCost go up by %10', () => {
                 underTest.donutMultiplierCount = 3 //arrangements
-                underTest.donutMultiplierCost = 11 
+                underTest.donutMultiplierCost = 11
                 underTest.addingTenPercentToTheDonutMuliplier()  //action
                 expect(underTest.donutMultiplierCost).toBe(12.1);  //assertion
             });
+        });
+    });
+});
+
+describe('FEATURE 3 : Ensure that there are enough donuts to buy a Donut Multiplier.', () => {
+    let underTest;
+
+    beforeEach(() => {
+        underTest = new DonutMaker;
+    });
+    describe('Prevent the Donut Multiplier count from going up if there are not enough donuts to purchase a Donut Multiplier.', () => {
+        it('should stop the user from getting a donut multiplier if they don"t have enough donuts ~donutCount~', () => {
+            underTest.donutCount = 9; //arrangement
+            underTest.notEnoughDonutCountsForADonutMultiplier() //action
+            expect(underTest.donutMultiplierCount).toBe(0); //assertion
+
+        });
+    });
+});
+
+describe('FEATURE 4 : The first Donut Multiplier should increase the value of a click 1.2x.', () => {
+    let underTest;
+
+    beforeEach(() => {
+        underTest = new DonutMaker;
+    });
+    describe('Increase the amount of donuts added to the donut count by multiplying by 1.2 after the first Donut Multiplier is purchased.', () => {
+        it('should increase the from 1 to 1.2 after the initial donutMultiplierCount is purchased', () => {
+            underTest.donutMultiplierCount = 1; //arrangement
+            underTest.increaseDonutValueByDonutMultiplier() //action
+            expect(underTest.donutValue).toBe(1.2);   //assertion
+        });
+    });
+});
+
+describe('FEATURE 5 : The amount the subsequent Donut Multipliers click bonus will go up exponentially.', () => {
+    let underTest;
+
+    beforeEach(() => {
+        underTest = new DonutMaker;
+    });
+    describe('Increase the click value multiplier to 1.2 to the xth power, where _x_ is the amount of the Donut Multipliers count.', () => {
+        it('should', () => {
+            
         });
     });
 });
