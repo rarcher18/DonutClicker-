@@ -5,8 +5,8 @@ const resetGame = function(){
 }
 
 const updatePage = function () {
-    document.querySelector('.donut-count').innerText = `We have this many donuts: ${donutMaker.donutCount}`;
-    document.querySelector('.donut-multiplier-info').innerText = `We own ${donutMaker.donutMultiplierCount} Donut Multiplers. You can buy another AutoClciker for ${donutMaker.donutMultiplerCost} donuts`
+    document.querySelector('.donut-count').innerText = `You have ${donutMaker.donutCount} donuts`;
+    document.querySelector('.donut-multiplier-info').innerText = `You have ${donutMaker.donutMultiplierCount} Donut Multiplers. You can buy another Donut Multiplier for ${donutMaker.donutMultiplierCost} donuts`
     checkMultiplierButton();
     checkAutoClickButton();
     // if(donutMaker.EnoughDonutCountsForADonutMultiplier()){
@@ -14,7 +14,7 @@ const updatePage = function () {
     // }else{
     //     document.querySelector(".donut-multiplier-button").disabled = true;
     // }
-    document.querySelector(".auto-clicker-info").innerText = `We own ${donutMaker.autoClickerCount} Auto Clickers. You can buy another AutoClicker for ${donutMaker.autoClickerCost} donuts`
+    document.querySelector(".auto-clicker-info").innerText = `You have ${donutMaker.autoClickCount} Auto Clickers. You can buy another AutoClicker for ${donutMaker.autoClickerCost} donuts`
 
     // if(donutMaker.purchaseAutoClick()){
     //     document.querySelector(".donut-multiplier-button").disabled = true;
@@ -71,7 +71,7 @@ document.querySelector(".donut-multiplier-button").addEventListener('click', () 
 
 });
 
-// setInterval(() => {
-//     donutMaker.recordAutoClick();
-//     updatePage();
-// }, 1000);
+setInterval(() => {
+    donutMaker.recordAutoClick();
+    updatePage();
+}, 1000);

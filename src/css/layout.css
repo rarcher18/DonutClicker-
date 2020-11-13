@@ -1,6 +1,9 @@
-.click-me {
+.click-button {
     padding: 50px;
     border: none;
     background: none;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-shrink;
 }
