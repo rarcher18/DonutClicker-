@@ -6,21 +6,25 @@ class DonutMaker {
         this.autoClickerCost = 100;
         this.donutMultiplierCount = 0;
         this.donutMultiplierCost = 10;
-        this.donutValue = 1;
-        this.autoClickValue = 1;
+        // this.donutValue = 1;
+        // this.autoClickValue = 1;
     }
 
     recordClick() {
-        this.donutCount++; //change to this.donutCount += this.donutValue
+       this.donutCount += Math.pow(1.2, this.donutMultiplierCount)
+        // this.donutCount += this.donutValue;
     }
-
+        
     purchaseAutoClick() {
-       //increasing the autoClickCount
-        this.autoClickCount++;
-       //subtract donut cost
-       this.autoClickSubtraction();
-       //increase the cost of the auto clicker
-       this.increaseCostOfAutoClicker();
+        //check if you can afford auto clicker
+        if(this.donutCount>= this.autoClickerCost){
+           
+            this.autoClickCount++;
+           
+            this.autoClickSubtraction();
+            
+            this.increaseCostOfAutoClicker();
+        }
     }
 
     autoClickSubtraction(){
@@ -43,7 +47,7 @@ class DonutMaker {
         this.donutCount += this.autoClickCount;
     }
 
-    // autoClick^^^^^^^ // iteration 1^^^^^
+    // autoClick^^^^^^^ // End of Iteration 1^^^^^
     //----------------------------------------------//
     
 
@@ -68,11 +72,16 @@ class DonutMaker {
         }
     }
 
-    increaseDonutValueByDonutMultiplier(){
-         this.donutValue = Math.pow(1.2, this.donutMultiplierCount)
-    }
+    // increaseDonutValueByDonutMultiplier(){
+    //      this.donutValue = Math.pow(1.2, this.donutMultiplierCount)
+    // }
 
-    increaseAutoClickValue(){
-        this.autoClickValue = this.donutValue
-    }
+    // increaseAutoClickValue(){
+    //     this.autoClickValue = this.donutValue
+    // }
 }
+
+
+
+// ^^^^^^^^^^^^End of Iteration 2 ^^^^^^^^^^^^^//
+//---------------------------------------------//
