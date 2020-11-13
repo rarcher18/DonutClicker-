@@ -6,10 +6,6 @@ class DonutMaker {
         this.autoClickerCost = 100;
         this.donutMultiplierCount = 0;
         this.donutMultiplierCost = 10;
-    
-        
-        // this.donutValue = 1;
-        // this.autoClickValue = 1;
     }
 
     recordClick() {
@@ -70,14 +66,6 @@ class DonutMaker {
     EnoughDonutCountsForADonutMultiplier(){
         this.donutCount >= this.donutMultiplierCost
     }
-
-    // increaseDonutValueByDonutMultiplier(){
-    //      this.donutValue = Math.pow(1.2, this.donutMultiplierCount)
-    // }
-
-    // increaseAutoClickValue(){
-    //     this.autoClickValue = this.donutValue
-    // }
 }
 
 
