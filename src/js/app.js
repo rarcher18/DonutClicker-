@@ -7,18 +7,28 @@ const resetGame = function(){
 const updatePage = function () {
     document.querySelector('.donut-count').innerText = `We have this many donuts: ${donutMaker.donutCount}`;
     document.querySelector('.donut-multiplier-info').innerText = `We own ${donutMaker.donutMultiplierCount} Donut Multiplers. You can buy another AutoClciker for ${donutMaker.donutMultiplerCost} donuts`
-
-    if(!donutMaker.notEnoughDonutCountsForADonutMultiplier()){
-        document.querySelector(".donut-multiplier-button").disabled = true;
-    }else{
-        document.querySelector(".donut-multiplier-button").disabled = false;
-    }
+    checkMultiplierButton();
+    checkAutoClickButton();
+    // if(donutMaker.EnoughDonutCountsForADonutMultiplier()){
+    //     document.querySelector(".donut-multiplier-button").disabled = false;
+    // }else{
+    //     document.querySelector(".donut-multiplier-button").disabled = true;
+    // }
     document.querySelector(".auto-clicker-info").innerText = `We own ${donutMaker.autoClickerCount} Auto Clickers. You can buy another AutoClicker for ${donutMaker.autoClickerCost} donuts`
 
-    if(!donutMaker.purchaseAutoClick()){
-        document.querySelector(".donut-multiplier-button").disabled = true;
-    }else{
+    // if(donutMaker.purchaseAutoClick()){
+    //     document.querySelector(".donut-multiplier-button").disabled = true;
+    // }else{
+    //     document.querySelector(".purchase-auto-clicker").disabled = false;
+    // }
+    
+}
+
+function checkAutoClickButton(){
+    if(this.donutCount>= this.autoClickerCost){
         document.querySelector(".purchase-auto-clicker").disabled = false;
+    }else{
+        document.querySelector(".purchase-auto-clicker").disabled = true;
     }
 }
 updatePage();
@@ -28,7 +38,7 @@ document.querySelector(".reset-button").addEventListener('click' , ()=>{
 });
 
 const makeDonut = function(){
-    donutMaker.recordClick;
+    donutMaker.recordClick();
 }
 
 document.querySelector('.click-button').addEventListener('click' , () => {
@@ -37,13 +47,28 @@ document.querySelector('.click-button').addEventListener('click' , () => {
 })
 
 const purchaseDonutMultiplier = function(){
-    donutMaker.addingDonutMultiplier();
+    donutMaker.addingToDonutMultiplier();
+    donutMaker.donutMultiplierSubtraction();
+    donutMaker.increaseCostOfDonutMultiplier();
+}
+
+document.querySelector(".purchase-auto-clicker").addEventListener('click' , () => {
+    donutMaker.purchaseAutoClick();
+})
+
+function checkMultiplierButton(){
+    if(donutMaker.donutCount >= donutMaker.donutMultiplierCost){
+        document.querySelector(".donut-multiplier-button").disabled = false;
+    }else{
+        document.querySelector(".donut-multiplier-button").disabled = true;
+    }
 }
 
 
 document.querySelector(".donut-multiplier-button").addEventListener('click', () => {
-    addingDonutMultiplier();
+    purchaseDonutMultiplier();
     updatePage();
+
 });
 
 // setInterval(() => {
