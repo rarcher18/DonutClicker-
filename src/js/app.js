@@ -6,7 +6,7 @@ const resetGame = function () {
 
 const updatePage = function () {
     document.querySelector('.donut-count').innerText = `You have ${donutMaker.donutCount} donuts`;
-    document.querySelector('.donut-multiplier-info').innerText = `You have ${donutMaker.donutMultiplierCount} Donut Multiplers. You can buy another Donut Multiplier for ${donutMaker.donutMultiplierCost} donuts`
+    document.querySelector('.donut-multiplier-info').innerText = `You have ${donutMaker.donutMultiplierCount} Donut Multipliers. You can buy another Donut Multiplier for ${donutMaker.donutMultiplierCost} donuts`
     checkMultiplierButton();
     checkAutoClickButton();
 
