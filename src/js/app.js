@@ -28,6 +28,7 @@ function checkAutoClickButton() {
         document.querySelector(".purchase-auto-clicker").disabled = false;
     }
 }
+ 
 
 document.querySelector(".purchase-auto-clicker").addEventListener('click', () => {
     donutMaker.purchaseAutoClick();
