@@ -45,7 +45,6 @@ const makeDonut = function () {
     donutMaker.recordClick();
 }
 
-
 document.querySelector('.click-button').addEventListener('click', () => {
     makeDonut();
     updatePage();
