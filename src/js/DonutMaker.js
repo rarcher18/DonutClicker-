@@ -47,7 +47,6 @@ class DonutMaker {
 
     // autoClick^^^^^^^ // End of Iteration 1^^^^^
     //----------------------------------------------//
-       
 
     addingToDonutMultiplier() {
        this.donutMultiplierCount++;
@@ -67,7 +66,6 @@ class DonutMaker {
         this.donutCount >= this.donutMultiplierCost
     }
 }
-
 
 
 // ^^^^^^^^^^^^End of Iteration 2 ^^^^^^^^^^^^^//
