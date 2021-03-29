@@ -47,7 +47,7 @@ class DonutMaker {
 
     // autoClick^^^^^^^ // End of Iteration 1^^^^^
     //----------------------------------------------//
-    
+       
 
     addingToDonutMultiplier() {
        this.donutMultiplierCount++;
