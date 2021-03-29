@@ -17,4 +17,5 @@
 .click-button img:hover {
     box-shadow: 4px 4px 10px;
     border-radius: 1000px;
+    /* position: inherit; */
 }
