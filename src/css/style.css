@@ -1,3 +1,8 @@
 .home{
     background-color: rgba(240, 111, 88, 0.863);
 }
+
+.game-text {
+    border: 20px;
+    color: rgb(61, 6, 6);
+}
