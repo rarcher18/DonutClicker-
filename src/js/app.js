@@ -70,6 +70,6 @@ document.querySelector(".donut-multiplier-button").addEventListener('click', () 
 });
 
 setInterval(() => {
-    donutMaker.recordAutoClick();
+    donutMaker.recordClick(); //Something funky is going on here but idk what
     updatePage();
 }, 1000);
