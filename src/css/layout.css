@@ -6,16 +6,21 @@
 .click-button {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 40px;
     border: none;
     background: none;
     border-radius: 50%;
     display: flex;
-    align-items: center;
 }
 
+.click-button img {
+    display: flex;
+    justify-content: center;
+}
 .click-button img:hover {
     box-shadow: 4px 4px 10px;
     border-radius: 1000px;
+
     /* position: inherit; */
 }
